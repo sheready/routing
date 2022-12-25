@@ -5,10 +5,11 @@ import { useRef } from "react";
 export default function Register() {
   const navigate = useNavigate();
   const emailRef = useRef(null);
+  const nameRef = useRef(null);
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/confirmed", {state: { email: emailRef.current.value }});
+    navigate("/confirmed", {state: { name: nameRef.current.value, email: emailRef.current.value }});
   }
 
   return (
@@ -23,6 +24,10 @@ export default function Register() {
         <label>
           Email:
           <input type="text" name="email" ref={emailRef} />
+        </label>
+        <label>
+          Name:
+          <input type="text" name="name" ref={nameRef} />
         </label>
         <input type="submit" value="Submit" />
       </form>

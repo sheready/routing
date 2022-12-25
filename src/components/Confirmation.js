@@ -5,10 +5,13 @@ export default function Confirmation() {
   return (
     <div className="container">
       <h1>Thank You!</h1>
-      <p>You're now registered for Red30 Tech.</p>
       {/* Ensure it renders only when there's state in the location object */}
       {state && (
-        <p>We've sent more details to <strong>{state.email}</strong> </p>
+        <>
+          <p> {state.name}You're now registered for Red30 Tech.</p>
+          <p>We've sent more details to <strong>{state.email}</strong> </p>
+        </>
+        
       )}
       
     </div>
